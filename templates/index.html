@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Study Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>AI Study Assistant</h1>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>Explain a Topic</h2>
+            <input type="text" id="topicInput" placeholder="Enter topic name">
+            <button onclick="explainTopic()">Explain</button>
+            <div id="explanationResult" class="result"></div>
+        </div>
+
+        <div class="card">
+            <h2>Upload PDF for Summary</h2>
+            <form id="pdfForm" enctype="multipart/form-data">
+                <input type="file" name="pdf" required>
+                <button type="submit">Summarize</button>
+            </form>
+            <div id="summaryResult" class="result"></div>
+        </div>
+
+        <div class="card">
+            <h2>Generate Quiz</h2>
+            <input type="text" id="quizTopic" placeholder="Enter topic">
+            
+            <select id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+            </select>
+
+            <select id="numQuestions">
+                <option value="5">5 Questions</option>
+                <option value="10">10 Questions</option>
+            </select>
+
+            <button onclick="generateQuiz()">Generate Quiz</button>
+            <div id="quizResult" class="result"></div>
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
